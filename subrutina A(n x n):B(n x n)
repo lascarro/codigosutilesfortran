@@ -11,6 +11,7 @@
 	       enddo     
 	 enddo
 	 enddo 
+	 end subroutine
          ! alternative covarance x contravariance
 	 subroutine MATMULT_NXN_VAR(A,B,C_R,NTENS)
 	 ! MATMULT(NTESNXNTENS , NTESxNTENS ) 16/04/2020
