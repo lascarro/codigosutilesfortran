@@ -1,0 +1,13 @@
+	 subroutine MATMULT_NXN(A,B,C_R,NTENS)
+	 ! MATMULT(NTESNXNTENS , NTESxNTENS ) 16/04/2020
+	 implicit none
+	 real*8 A(ntens,ntens),B(ntens,ntens),C_R(ntens,ntens)
+	 integer i,j,k,ntens
+	 C_R=0.0d0
+	 do i=1,ntens
+	     do j=1,ntens
+	       do k=1,ntens
+	       C_R(i,j)=C_R(i,j)+A(i,k)*B(k,j)
+	       enddo     
+	 enddo
+	 enddo 
