@@ -1,0 +1,13 @@
+       SUBROUTINE MATMULT_J2K(A,B,C_R,NTENS)
+	   ! MATMULT(NTESNXNTENS , NTES ) 16/04/2020
+	   implicit none
+	   real*8 A(ntens,ntens),B(ntens),C_R(ntens)
+	   integer i,j
+	   C=0.0d0
+	   do i=1,ntens
+	      do j=1,ntens
+		     C(i)=C(i)+A(i,j)*B(j)
+		  enddo
+	   enddo   
+	   
+	   END SUBROUTINE
