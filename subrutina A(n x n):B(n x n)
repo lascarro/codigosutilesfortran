@@ -11,3 +11,29 @@
 	       enddo     
 	 enddo
 	 enddo 
+         ! alternative covarance x contravariance
+	 subroutine MATMULT_NXN_VAR(A,B,C_R,NTENS)
+	 ! MATMULT(NTESNXNTENS , NTESxNTENS ) 16/04/2020
+	 !A (ntens x 1) ; B (1 x ntens) C= (ntens x ntex)
+	 implicit none
+	 real*8 A(ntens,1),B(1,ntens)
+	 real*8 MA(ntens,ntens),MB(ntens,ntens),C_R(ntens,ntens)
+	 integer i,j,k,ntens
+	 MA=0d0;
+	 MB=0d0;
+	 do i=1,ntens
+	 MA(i,1)=A(i,1)
+	 MB(1,i)=B(1,i)
+	 enddo 
+	 
+	 
+	 C_R=0.0d0
+	 do i=1,ntens
+	     do j=1,ntens
+	       do k=1,ntens
+	       C_R(i,j)=C_R(i,j)+MA(i,k)*MB(k,j)
+	       enddo     
+	 enddo
+	 enddo   
+  
+	 end subroutine
