@@ -1,4 +1,4 @@
-  SUBROUTINE C_INVMAT(MATRIZini,INVERSE,ntens)
+       SUBROUTINE C_INVMAT(MATRIZini,INVERSE,ntens)
 c      INVERSA DE UNA MATRIZ DE NTENS X NTENS usando el metodo de gauss
 c      Carlos Lascarro - 03/2020
        integer ntens,i,j,diag
